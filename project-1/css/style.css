@@ -55,13 +55,43 @@ header h1 {
     padding-top: 50px;
 }
 
+.two-column-layout.banner-layout {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-.two-column-layout {
+.two-column-layout.banner-layout img{
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* .two-column-layout {
     display: flex;
     gap: 2rem;
     justify-content: center;
     align-items: center; 
     flex-wrap: wrap;
+    width: 100%;
+} */
+
+.two-column-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -129,7 +159,7 @@ ul li:hover::after {
     transform: scaleX(1)
 }
 
-.banner-column {
+/* .banner-column {
     flex: 0 0 auto;
     max-width: none;
 }
@@ -140,30 +170,34 @@ ul li:hover::after {
     height: auto;
     display: block;
     margin: 0 auto;
-}
+} */
 
 footer {
-    /* position: fixed; */
-    bottom: 0;
-    left: 0;
-    width: 20%;
-    height: 30px;
-    margin: 20px;
     background-color: #dbdbdb;
     color: #000;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    
+    height: 30px;
+    padding: 0 15px;
+    margin: 20px;
+    border-radius: 20px;
+    white-space: nowrap;
 }
+
+/*control layout on smaller screens (I hope)*/
 
 @media (max-width: 700px) {
     .two-column-layout {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
     }
 
     .two-column-layout.top-aligned {
         align-items: center;
+    }
+
+    .two-column-layout.banner-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 }
