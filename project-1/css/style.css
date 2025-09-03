@@ -150,6 +150,34 @@ header h1 {
     text-align: center;
 }
 
+/*Link handling*/
+
+.link-column {
+    flex: 1;
+    flex-direction: row;
+    background: #ff66004c;
+    margin: 0px;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 0px;
+    max-width: 100%;
+    text-align: center;
+}
+
+a {
+    color: #04ff00;
+    text-decoration: underline dotted;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+a:hover {
+    color: #ff2ca0;
+    transform: scale(1.1);
+    text-shadow: 0 4px 10px rgb(0, 0, 0);
+}
+
+/*Setting up the hobby list*/
 ul {
     margin: 0 auto;
     padding-left: 20px;;
