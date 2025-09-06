@@ -1,10 +1,14 @@
 
+/* Makes sure the custom font is up and runing */
+
 @font-face {
     font-family: "XXII Arabian Onenightstand";
     src: url('../assets/fonts/XXII\ ARABIAN-ONENIGHTSTAND.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+/* Basic setup if the page with background and text color(s) */
 
 body {
     margin: 0;
@@ -43,6 +47,8 @@ header h1 {
     color: #000;
 }
 
+/* This sections sets the rules for all the div's */
+
 .wrapper:first-of-type {
     max-inline-size: 1000px;
     margin: 0 auto;
@@ -78,16 +84,6 @@ header h1 {
     margin: 0 auto;
 }
 
-
-/* .two-column-layout {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center; 
-    flex-wrap: wrap;
-    width: 100%;
-} */
-
 .two-column-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
@@ -100,10 +96,10 @@ header h1 {
 
 .two-column-layout.top-aligned {
     align-items: flex-start;
-    gap: 3rem;
+    gap: 2rem;
+    max-width: 100%;
 
 }
-
 
 .column {
     display: flex;
@@ -144,15 +140,17 @@ header h1 {
     background-color: #ff66004c;
     margin: 0px;
     padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 10px;
     min-width: 0px;
     max-width: 100%;
     text-align: center;
 }
 
-/*Link handling*/
+/*Link box handling*/
 
-.link-column {
+.link-box {
     flex: 1;
     flex-direction: row;
     background: #ff66004c;
@@ -185,6 +183,12 @@ ul {
     text-align: left;
 }
 
+ul li:hover::after {
+    transform: scaleX(1)
+}
+
+/* This was used, but I decided to remove it, keeping the code in case I change my mind. */
+
 /* ul li {
     position: relative;
     cursor: crosshair;
@@ -209,12 +213,8 @@ ul li::after{
 
 } */
 
-ul li:hover::after {
-    transform: scaleX(1)
-}
 
-
-/* This is not used */
+/* This became redundant code, but kept it just in case */
 
 /* .banner-column  {
     flex: 0 0 auto;
@@ -228,6 +228,8 @@ ul li:hover::after {
     display: block;
     margin: 0 auto;
 } */
+
+/* Sets up the style of the footer in the bottom left corner */
 
 footer {
     background-color: #dbdbdb;
@@ -243,6 +245,7 @@ footer {
 }
 
 /* Timeline Layout */
+
 .timeline {
     position: relative;
     margin: 20px 0;
@@ -286,14 +289,13 @@ footer {
 }
 
 .timeline-content::before {
-    content: "– ";   /* dash + space */
-    color: #fff;     /* or #FF6600 if you want it orange */
+    content: "– ";
+    color: #fff;
     margin-right: 10px;
 }
 
-
-
 /*timeline animation*/
+
 .timeline-item {
     opacity: 0;
     transform: translateY(20px);
